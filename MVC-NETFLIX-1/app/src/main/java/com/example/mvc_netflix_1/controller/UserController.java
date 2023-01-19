@@ -15,9 +15,7 @@ public class UserController {
     }
 
     public void getUser(){
-        //THREADSSSS!!! -> RETROFIT 2
-        //IRÍA A WEBSERVICE REST + COGERÍA DATA STUDENT + Y VOLVERÍA
-        User user = model.getUserWS();
+        User user = model.getData();
         view.printUserDetails(user);
     }
 }

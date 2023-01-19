@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/edtbtn1"
+        app:layout_constraintBottom_toTopOf="@+id/edtText1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.928" />
 
     <EditText
-        android:id="@+id/edtbtn1"
+        android:id="@+id/edtText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -37,13 +37,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:text="Password"
-        app:layout_constraintBottom_toTopOf="@+id/edtbtn2"
+        app:layout_constraintBottom_toTopOf="@+id/edtText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.286"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edtbtn2"
+        android:id="@+id/edtText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"

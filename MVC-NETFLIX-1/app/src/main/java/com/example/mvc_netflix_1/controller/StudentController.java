@@ -6,7 +6,7 @@ import com.example.mvc_netflix_1.model.pojo.Student;
 
 public class StudentController {
     private StudentWS model;
-    //private MainActivity view;
+    private MainActivity view;
 
     public StudentController(StudentWS model, MainActivity view) {
         this.model = model;
