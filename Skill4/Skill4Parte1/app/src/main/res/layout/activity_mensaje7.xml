@@ -15,7 +15,7 @@
         android:id="@+id/txtNombreMsj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bienvenido: "
+        android:text="@string/text_msj_bienvenido"
         android:textSize="25sp"/>
 
     <Button
