@@ -12,6 +12,7 @@ public class LstSimpsonPresenter implements LstSimpsonContract.Presenter {
     public LstSimpsonPresenter(){
         lstSimpsonModel = new LstSimpsonModel();
     }
+
     @Override
     public void lstSimpson(Simpson simpson) {
         lstSimpsonModel.lstSimpsonWS(null, new LstSimpsonContract.Model.OnLstSimpsonListener() {

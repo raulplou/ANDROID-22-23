@@ -11,6 +11,7 @@ public interface LstSimpsonContract {
     }
 
     public interface Presenter{
+        //CASO DE USO
         void lstSimpson(Simpson simpson);
     }
 
