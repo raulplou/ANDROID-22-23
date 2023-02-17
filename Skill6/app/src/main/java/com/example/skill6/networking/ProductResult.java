@@ -1,5 +1,7 @@
 package com.example.skill6.networking;
 
+import com.google.gson.annotations.SerializedName;
+
 public class ProductResult {
 
     @SerializedName("id")
