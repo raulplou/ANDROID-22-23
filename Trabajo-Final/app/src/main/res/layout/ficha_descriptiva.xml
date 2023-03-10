@@ -5,12 +5,12 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="PONER FILTROS PARA REALIZAR LA COMPRA"
+        android:text="FICHA DESCRIPTIVA DE CADA RESTAURANTE"
         android:textSize="34sp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="227dp" />
+        tools:layout_editor_absoluteY="243dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
