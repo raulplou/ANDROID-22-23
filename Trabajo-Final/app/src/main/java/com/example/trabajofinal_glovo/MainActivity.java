@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 );
                 startActivity(screenChanger);
             }
-        }, 3000);
+        }, 2000);
     }
 
 
