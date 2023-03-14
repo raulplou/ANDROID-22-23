@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
     public static final String BASE_URL =
             "http://172.21.3.34:8080/RakutenTV/webresources/";
-//PONER RUTA NETBEANS WEB!!!!
+
     public static final String BASE_URL1 =
             "http://localhost:8080/API-Restaurantes/webresources/";
 

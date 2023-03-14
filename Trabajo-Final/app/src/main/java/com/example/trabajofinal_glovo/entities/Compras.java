@@ -19,6 +19,46 @@ public class Compras {
     @SerializedName("restaurante")
     private int restaurante;
 
+    public int getIdCompra() {
+        return idCompra;
+    }
+
+    public void setIdCompra(int idCompra) {
+        this.idCompra = idCompra;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(int usuario) {
+        this.usuario = usuario;
+    }
+
+    public int getRestaurante() {
+        return restaurante;
+    }
+
+    public void setRestaurante(int restaurante) {
+        this.restaurante = restaurante;
+    }
+
     @Override
     public String toString() {
         return "Compras{" +

@@ -1,4 +1,4 @@
-package com.example.trabajofinal_glovo.lst_pokemons.view;
+package com.example.trabajofinal_glovo.lst_index.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pokemon_api_01.R;
+import com.example.trabajofinal_glovo.R;
+import com.example.trabajofinal_glovo.entities.Index;
 
-public class LstPokemonAdapter extends RecyclerView.Adapter<LstPokemonAdapter.ViewHolder> {
+/*public class LstIndexAdapter extends RecyclerView.Adapter<LstIndexAdapter.ViewHolder> {
 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).
@@ -21,14 +22,8 @@ public class LstPokemonAdapter extends RecyclerView.Adapter<LstPokemonAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Pokemon p = dataset.get(position);
+        Index p = dataset.get(position);
         holder.nombreTextView.setText(p.getName());
-
-        Glide.with(context)
-                .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + p.getNumber() + ".png")
-                .centerCrop()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.fotoImageView);
     }
 
     @Override
@@ -36,7 +31,6 @@ public class LstPokemonAdapter extends RecyclerView.Adapter<LstPokemonAdapter.Vi
         return 0;
     }
 
-    /*VIEW HOLDER*/
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -51,4 +45,4 @@ public class LstPokemonAdapter extends RecyclerView.Adapter<LstPokemonAdapter.Vi
         }
     }
 
-}
+}*/
