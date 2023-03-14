@@ -1,18 +1,13 @@
 package com.example.trabajofinal_glovo.utils;
 
-import android.telecom.Call;
+import com.example.trabajofinal_glovo.entities.Index;
 
-import com.example.trabajofinal_glovo.entities.Restaurantes;
-
-import java.util.ArrayList;
-
-//import retrofit2.Call;
+import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 public interface ApiInterface {
-    //@GET("idRestaurante")
-    //Call<ArrayList<Restaurantes>> getPopularSimpson(@Query("count") int count);
+    @GET("apirestaurantes")
+    Call<Index> getApi();
     //Call<ArrayList<Simpson>>  getPopularSimpson(@Path("count") int count);
 /*
     @GET("movie/{movie_id}")

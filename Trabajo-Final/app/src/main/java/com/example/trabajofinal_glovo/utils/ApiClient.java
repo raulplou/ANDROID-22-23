@@ -8,7 +8,7 @@ public class ApiClient {
             "http://172.21.3.34:8080/RakutenTV/webresources/";
 //PONER RUTA NETBEANS WEB!!!!
     public static final String BASE_URL1 =
-            "https://thesimpsonsquoteapi.glitch.me/";
+            "http://localhost:8080/API-Restaurantes/webresources/";
 
     private static Retrofit retrofit = null;
 
