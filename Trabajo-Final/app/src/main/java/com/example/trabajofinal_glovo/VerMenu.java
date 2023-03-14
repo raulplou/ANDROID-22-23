@@ -6,10 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class VerMenu extends AppCompatActivity {
+import com.example.trabajofinal_glovo.entities.Index;
+import com.example.trabajofinal_glovo.lst_index.LstIndexContract;
+import com.example.trabajofinal_glovo.lst_index.presenter.LstIndexPresenter;
 
+import java.util.ArrayList;
+
+public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
+
+    TextView txtPrimero,txtSegundo,txtPostre;
+    LstIndexPresenter lstIndexPresenter;
     Button comprar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -26,5 +37,35 @@ public class VerMenu extends AppCompatActivity {
                 startActivity(screenChanger);
             }
         });
+
+        initComponents();
+        initPresenter();
+        initData();
+    }
+
+    public void initComponents(){
+        txtPrimero = (TextView) findViewById(R.id.txtPrimero);
+        txtSegundo = (TextView) findViewById(R.id.txtSegundo);
+        txtPostre = (TextView) findViewById(R.id.txtPostre);
+    }
+
+    public void initPresenter(){
+        lstIndexPresenter = new LstIndexPresenter(this);
+    }
+
+    public void initData(){
+        lstIndexPresenter.lstIndex(null);
+    }
+
+    @Override
+    public void successLstIndex(ArrayList<Index> lstIndex) {
+        for (Index index: lstIndex) {
+            txtPrimero.setText(index.getRestaurantes().get(0).getMenu());
+        }
+    }
+
+    @Override
+    public void failureLstIndex(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
     }
 }

@@ -25,6 +25,19 @@ public class Restaurantes {
     @SerializedName("menu")
     private String menu;
 
+    public Restaurantes(int idRestaurante, String nombreRestaurante, String categoria, String descripcion, String menu) {
+        this.idRestaurante = idRestaurante;
+        this.nombreRestaurante = nombreRestaurante;
+        this.categoria = categoria;
+        this.descripcion = descripcion;
+        this.menu = menu;
+    }
+
+    public Restaurantes(String nombreRestaurante, String categoria) {
+        this.nombreRestaurante = nombreRestaurante;
+        this.categoria = categoria;
+    }
+
     public int getIdRestaurante() {
         return idRestaurante;
     }

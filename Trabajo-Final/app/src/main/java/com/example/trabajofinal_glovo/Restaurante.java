@@ -29,12 +29,12 @@ public class Restaurante extends AppCompatActivity {
             }
         });
 
-        menu = (Button) findViewById(R.id.btnFicha);
+        menu = (Button) findViewById(R.id.btnMenu);
 
         menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent screenChanger = new Intent(getBaseContext(),
-                        FichaDescriptiva.class
+                        VerMenu.class
                 );
                 startActivity(screenChanger);
             }
