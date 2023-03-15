@@ -44,7 +44,7 @@ public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
 
     public void initComponents(){
         comprar = (Button) findViewById(R.id.btnCompra);
-        txtPrimSegPost = (TextView) findViewById(R.id.txtPrimSegPost);
+        txtPrimSegPost = (TextView) findViewById(R.id.txtMenu);
     }
 
     public void initPresenter(){

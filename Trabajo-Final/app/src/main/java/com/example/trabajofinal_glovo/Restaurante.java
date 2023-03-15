@@ -6,11 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class Restaurante extends AppCompatActivity {
+import com.example.trabajofinal_glovo.entities.Index;
+import com.example.trabajofinal_glovo.lst_index.LstIndexContract;
+import com.example.trabajofinal_glovo.lst_index.presenter.LstIndexPresenter;
 
-    Button ficha;
-    Button menu;
+import java.util.ArrayList;
+
+public class Restaurante extends AppCompatActivity{
+
+    Button ficha,menu;
+    //LstIndexPresenter lstIndexPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +26,9 @@ public class Restaurante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurante);
 
-        ficha = (Button) findViewById(R.id.btnFicha);
+        initComponents();
+        /*initPresenter();
+        initData();*/
 
         ficha.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -29,8 +39,6 @@ public class Restaurante extends AppCompatActivity {
             }
         });
 
-        menu = (Button) findViewById(R.id.btnMenu);
-
         menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent screenChanger = new Intent(getBaseContext(),
@@ -40,4 +48,18 @@ public class Restaurante extends AppCompatActivity {
             }
         });
     }
+
+    public void initComponents(){
+        ficha = (Button) findViewById(R.id.btnFicha);
+        menu = (Button) findViewById(R.id.btnMenu);
+    }
+
+    /*public void initPresenter(){
+        lstIndexPresenter = new LstIndexPresenter(this);
+    }
+
+    public void initData(){
+        lstIndexPresenter.lstIndex(null);
+    }*/
+
 }
