@@ -35,10 +35,7 @@ public class ListaRestaurantes extends AppCompatActivity implements LstIndexCont
         initPresenter();
         initData();
 
-        recyclerRestaurantes.setLayoutManager(new LinearLayoutManager(this));
 
-        AdaptadorRestaurantes adapter = new AdaptadorRestaurantes(listaRestaurantes);
-        recyclerRestaurantes.setAdapter(adapter);
 
         busqueda.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -72,6 +69,11 @@ public class ListaRestaurantes extends AppCompatActivity implements LstIndexCont
             //listaRestaurantes.add(new Restaurantes("El Churrasco","Comida aragonesa"));
             //listaRestaurantes.add(new Restaurantes("Ché","Comida argentina"));
         }
+
+        recyclerRestaurantes.setLayoutManager(new LinearLayoutManager(this));
+
+        AdaptadorRestaurantes adapter = new AdaptadorRestaurantes(listaRestaurantes);
+        recyclerRestaurantes.setAdapter(adapter);
     }
 
     @Override

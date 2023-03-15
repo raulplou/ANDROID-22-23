@@ -2,12 +2,14 @@ package com.example.trabajofinal_glovo.utils;
 
 import com.example.trabajofinal_glovo.entities.Index;
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ApiInterface {
     @GET("apirestaurantes")
-    Call<Index> getApi();
+    Call<ArrayList<Index>> getApi();
     //Call<ArrayList<Simpson>>  getPopularSimpson(@Path("count") int count);
 /*
     @GET("movie/{movie_id}")

@@ -18,18 +18,16 @@ public class LstIndexModel implements LstIndexContract.Model {
     @Override
     public void lstIndexWS(Index index, OnLstIndexListener onLstIndexListener) {
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<Index> indexRespuestaCall = apiService.getApi();
-        indexRespuestaCall.enqueue(new Callback<Index>() {
+        Call<ArrayList<Index>> indexRespuestaCall = apiService.getApi();
+        indexRespuestaCall.enqueue(new Callback<ArrayList<Index>>() {
             @Override
-            public void onResponse(Call<Index> call, Response<Index> response) {
-                Index indexRespuesta = response.body();
-                ArrayList<Index> listaIndex = new ArrayList<Index>();
-                listaIndex.add(indexRespuesta);
-                onLstIndexListener.onSuccess(listaIndex);
+            public void onResponse(Call<ArrayList<Index>> call, Response<ArrayList<Index>> response) {
+                ArrayList<Index> indexRespuesta = response.body();
+                onLstIndexListener.onSuccess(indexRespuesta);
             }
 
             @Override
-            public void onFailure(Call<Index> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Index>> call, Throwable t) {
                 onLstIndexListener.onFailure(t.getMessage());
             }
         });
