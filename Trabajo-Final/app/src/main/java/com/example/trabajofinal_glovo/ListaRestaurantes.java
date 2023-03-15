@@ -8,16 +8,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.trabajofinal_glovo.entities.Index;
 import com.example.trabajofinal_glovo.entities.Restaurantes;
+import com.example.trabajofinal_glovo.lst_index.LstIndexContract;
+import com.example.trabajofinal_glovo.lst_index.presenter.LstIndexPresenter;
 
 import java.util.ArrayList;
 
-public class ListaRestaurantes extends AppCompatActivity {
+public class ListaRestaurantes extends AppCompatActivity implements LstIndexContract.View{
 
     ArrayList<Restaurantes> listaRestaurantes;
     RecyclerView recyclerRestaurantes;
     Button busqueda;
+    LstIndexPresenter lstIndexPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +31,14 @@ public class ListaRestaurantes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_restaurantes);
 
-        listaRestaurantes = new ArrayList<>();
-        recyclerRestaurantes = (RecyclerView) findViewById(R.id.recyclerId);
+        initComponents();
+        initPresenter();
+        initData();
+
         recyclerRestaurantes.setLayoutManager(new LinearLayoutManager(this));
-        busqueda = (Button) findViewById(R.id.btnPersonalizada);
+
+        AdaptadorRestaurantes adapter = new AdaptadorRestaurantes(listaRestaurantes);
+        recyclerRestaurantes.setAdapter(adapter);
 
         busqueda.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -38,16 +48,35 @@ public class ListaRestaurantes extends AppCompatActivity {
                 startActivity(screenChanger);
             }
         });
-
-        llenarRestaurantes();
-
-        AdaptadorRestaurantes adapter = new AdaptadorRestaurantes(listaRestaurantes);
-        recyclerRestaurantes.setAdapter(adapter);
     }
 
-    private void llenarRestaurantes() {
-        listaRestaurantes.add(new Restaurantes("La Mafia","Comida italiana"));
-        listaRestaurantes.add(new Restaurantes("El Churrasco","Comida aragonesa"));
-        listaRestaurantes.add(new Restaurantes("Ché","Comida argentina"));
+    public void initComponents(){
+        listaRestaurantes = new ArrayList<>();
+        recyclerRestaurantes = (RecyclerView) findViewById(R.id.recyclerId);
+        busqueda = (Button) findViewById(R.id.btnPersonalizada);
+    }
+
+    public void initPresenter(){
+        lstIndexPresenter = new LstIndexPresenter(this);
+    }
+
+    public void initData(){
+        lstIndexPresenter.lstIndex(null);
+    }
+
+    @Override
+    public void successLstIndex(ArrayList<Index> lstIndex) {
+        for (Restaurantes restaurantes: lstIndex.get(0).getRestaurantes()) {
+            listaRestaurantes.add(restaurantes);
+            //listaRestaurantes.add(new Restaurantes("La Mafia","Comida italiana"));
+            //listaRestaurantes.add(new Restaurantes("El Churrasco","Comida aragonesa"));
+            //listaRestaurantes.add(new Restaurantes("Ché","Comida argentina"));
+        }
+    }
+
+    @Override
+    public void failureLstIndex(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+
     }
 }

@@ -8,7 +8,7 @@ public class ApiClient {
             "http://172.21.3.34:8080/RakutenTV/webresources/";
 
     public static final String BASE_URL1 =
-            "http://localhost:8080/API-Restaurantes/webresources/";
+            "http://10.0.2.2:8080/API-Restaurantes/webresources/";
 
     private static Retrofit retrofit = null;
 

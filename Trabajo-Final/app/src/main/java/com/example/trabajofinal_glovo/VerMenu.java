@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
 
-    TextView txtPrimero,txtSegundo,txtPostre;
+    TextView txtPrimSegPost;
     LstIndexPresenter lstIndexPresenter;
     Button comprar;
 
@@ -44,9 +44,7 @@ public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
     }
 
     public void initComponents(){
-        txtPrimero = (TextView) findViewById(R.id.txtPrimero);
-        txtSegundo = (TextView) findViewById(R.id.txtSegundo);
-        txtPostre = (TextView) findViewById(R.id.txtPostre);
+        txtPrimSegPost = (TextView) findViewById(R.id.txtPrimSegPost);
     }
 
     public void initPresenter(){
@@ -60,7 +58,7 @@ public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
     @Override
     public void successLstIndex(ArrayList<Index> lstIndex) {
         for (Index index: lstIndex) {
-            txtPrimero.setText(index.getRestaurantes().get(0).getMenu());
+            txtPrimSegPost.setText(index.getRestaurantes().get(0).getMenu());
         }
     }
 

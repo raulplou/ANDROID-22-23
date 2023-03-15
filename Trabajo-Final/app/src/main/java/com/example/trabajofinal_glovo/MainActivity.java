@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent screenChanger = new Intent(getBaseContext(),
-                        Restaurante.class //FichaDescriptiva-LoginActivity
+                        LoginActivity.class //FichaDescriptiva-LoginActivity
                 );
                 startActivity(screenChanger);
             }
