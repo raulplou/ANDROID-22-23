@@ -27,7 +27,9 @@ public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ver_menu);
 
-        comprar = (Button) findViewById(R.id.btnCompra);
+        initComponents();
+        initPresenter();
+        initData();
 
         comprar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -38,12 +40,10 @@ public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
             }
         });
 
-        initComponents();
-        initPresenter();
-        initData();
     }
 
     public void initComponents(){
+        comprar = (Button) findViewById(R.id.btnCompra);
         txtPrimSegPost = (TextView) findViewById(R.id.txtPrimSegPost);
     }
 

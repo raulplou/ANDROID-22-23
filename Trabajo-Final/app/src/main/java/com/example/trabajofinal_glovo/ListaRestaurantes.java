@@ -35,8 +35,6 @@ public class ListaRestaurantes extends AppCompatActivity implements LstIndexCont
         initPresenter();
         initData();
 
-
-
         busqueda.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent screenChanger = new Intent(getBaseContext(),
@@ -79,6 +77,5 @@ public class ListaRestaurantes extends AppCompatActivity implements LstIndexCont
     @Override
     public void failureLstIndex(String error) {
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
-
     }
 }
