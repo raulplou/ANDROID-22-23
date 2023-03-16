@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,13 +18,11 @@ import java.util.ArrayList;
 
 public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
 
-    TextView txtPrimSegPost;
+    TextView txtMenu;
+    Button btnCompra;
     LstIndexPresenter lstIndexPresenter;
-    Button comprar;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ver_menu);
 
@@ -31,7 +30,7 @@ public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
         initPresenter();
         initData();
 
-        comprar.setOnClickListener(new View.OnClickListener() {
+        btnCompra.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent screenChanger = new Intent(getBaseContext(),
                         Compra.class
@@ -42,28 +41,26 @@ public class VerMenu extends AppCompatActivity implements LstIndexContract.View{
 
     }
 
-    public void initComponents(){
-        comprar = (Button) findViewById(R.id.btnCompra);
-        txtPrimSegPost = (TextView) findViewById(R.id.txtMenu);
+    public void initComponents() {
+        txtMenu = (TextView) findViewById(R.id.txtMenu);
+        btnCompra = (Button) findViewById(R.id.btnCompra);
     }
 
-    public void initPresenter(){
+    public void initPresenter() {
         lstIndexPresenter = new LstIndexPresenter(this);
     }
 
-    public void initData(){
+    public void initData() {
         lstIndexPresenter.lstIndex(null);
     }
 
     @Override
     public void successLstIndex(ArrayList<Index> lstIndex) {
-        for (Index index: lstIndex) {
-            txtPrimSegPost.setText(index.getRestaurantes().get(0).getMenu());
-        }
+        txtMenu.setText(lstIndex.get(0).getMenu().get(0).getMenu());
     }
 
     @Override
     public void failureLstIndex(String error) {
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+
     }
 }

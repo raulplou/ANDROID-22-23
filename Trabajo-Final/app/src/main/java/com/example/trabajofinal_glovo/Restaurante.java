@@ -30,6 +30,15 @@ public class Restaurante extends AppCompatActivity{
         /*initPresenter();
         initData();*/
 
+        menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent screenChanger = new Intent(getBaseContext(),
+                        VerMenu.class
+                );
+                startActivity(screenChanger);
+            }
+        });
+
         ficha.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent screenChanger = new Intent(getBaseContext(),
@@ -39,14 +48,7 @@ public class Restaurante extends AppCompatActivity{
             }
         });
 
-        menu.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent screenChanger = new Intent(getBaseContext(),
-                        VerMenu.class
-                );
-                startActivity(screenChanger);
-            }
-        });
+
     }
 
     public void initComponents(){

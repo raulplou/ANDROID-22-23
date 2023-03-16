@@ -21,9 +21,14 @@ public class Index {
     @SerializedName("byCategoria")
     private ArrayList<Restaurantes> byCategoria;
 
-    @SerializedName("TopDiez")
+    @SerializedName("topDiez")
     private ArrayList<Restaurantes> topDiez;
 
+    @SerializedName("ficha")
+    private ArrayList<Restaurantes> ficha;
+
+    @SerializedName("menu")
+    private ArrayList<Restaurantes> menu;
 
     public ArrayList<Restaurantes> getRestaurantes() {
         return restaurantes;
@@ -71,6 +76,22 @@ public class Index {
 
     public void setTopDiez(ArrayList<Restaurantes> topDiez) {
         this.topDiez = topDiez;
+    }
+
+    public ArrayList<Restaurantes> getFicha() {
+        return ficha;
+    }
+
+    public void setFicha(ArrayList<Restaurantes> ficha) {
+        this.ficha = ficha;
+    }
+
+    public ArrayList<Restaurantes> getMenu() {
+        return menu;
+    }
+
+    public void setMenu(ArrayList<Restaurantes> menu) {
+        this.menu = menu;
     }
 
     @Override

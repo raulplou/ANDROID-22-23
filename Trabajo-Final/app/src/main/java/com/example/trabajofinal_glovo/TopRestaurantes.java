@@ -20,7 +20,6 @@ public class TopRestaurantes extends AppCompatActivity implements LstIndexContra
     ArrayList<Restaurantes> listaRestaurantes;
     RecyclerView recyclerRestaurantes;
     LstIndexPresenter lstIndexPresenter;
-    String filtro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +48,7 @@ public class TopRestaurantes extends AppCompatActivity implements LstIndexContra
 
     @Override
     public void successLstIndex(ArrayList<Index> lstIndex) {
-        Bundle filtroTopBundle = this.getIntent().getExtras();
-        if(filtroTopBundle != null){
-            filtro = filtroTopBundle.getString("Top");
-            listaRestaurantes = lstIndex.get(0).getTopDiez();
-            Toast.makeText(this, "TOP DIEZ", Toast.LENGTH_SHORT).show();
-        }
+        listaRestaurantes = lstIndex.get(0).getTopDiez();
 
         recyclerRestaurantes.setLayoutManager(new LinearLayoutManager(this));
 

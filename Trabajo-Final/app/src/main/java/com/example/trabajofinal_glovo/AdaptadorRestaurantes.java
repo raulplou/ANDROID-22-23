@@ -11,9 +11,10 @@ import com.example.trabajofinal_glovo.entities.Restaurantes;
 
 import java.util.ArrayList;
 
-public class AdaptadorRestaurantes extends RecyclerView.Adapter<AdaptadorRestaurantes.ViewHolderRestaurantes> {
+public class AdaptadorRestaurantes extends RecyclerView.Adapter<AdaptadorRestaurantes.ViewHolderRestaurantes> implements View.OnClickListener {
 
     ArrayList<Restaurantes> listaRestaurantes;
+    private View.OnClickListener listener;
 
     public AdaptadorRestaurantes(ArrayList<Restaurantes> listaRestaurantes) {
         this.listaRestaurantes = listaRestaurantes;
@@ -22,6 +23,7 @@ public class AdaptadorRestaurantes extends RecyclerView.Adapter<AdaptadorRestaur
     @Override
     public ViewHolderRestaurantes onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_restaurantes,null,false);
+        view.setOnClickListener(this);
         return new ViewHolderRestaurantes(view);
     }
 
@@ -34,6 +36,17 @@ public class AdaptadorRestaurantes extends RecyclerView.Adapter<AdaptadorRestaur
     @Override
     public int getItemCount() {
         return listaRestaurantes.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (listener != null){
+            listener.onClick(view);
+        }
     }
 
     public class ViewHolderRestaurantes extends RecyclerView.ViewHolder {

@@ -72,6 +72,17 @@ public class ListaRestaurantes extends AppCompatActivity implements LstIndexCont
 
         AdaptadorRestaurantes adapter = new AdaptadorRestaurantes(listaRestaurantes);
 
+        adapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent screenChanger = new Intent(getBaseContext(),
+                        Restaurante.class
+                );
+
+                startActivity(screenChanger);
+            }
+        });
+
         recyclerRestaurantes.setAdapter(adapter);
     }
 

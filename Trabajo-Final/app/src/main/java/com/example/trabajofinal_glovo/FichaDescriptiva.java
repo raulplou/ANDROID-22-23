@@ -31,7 +31,6 @@ public class FichaDescriptiva extends AppCompatActivity implements LstIndexContr
         txtNombre = (TextView) findViewById(R.id.txtNombre);
         txtCategoria = (TextView) findViewById(R.id.txtCategoria);
         txtDescripcion = (TextView) findViewById(R.id.txtDescripcion);
-        //txtMenu = (TextView) findViewById(R.id.txtMenu);
     }
 
     public void initPresenter(){
@@ -45,10 +44,9 @@ public class FichaDescriptiva extends AppCompatActivity implements LstIndexContr
     @Override
     public void successLstIndex(ArrayList<Index> lstIndex) {
         for (Index index: lstIndex) {
-            txtNombre.setText(index.getRestaurantes().get(0).getNombreRestaurante());
-            txtCategoria.setText(index.getRestaurantes().get(0).getCategoria());
-            txtDescripcion.setText(index.getRestaurantes().get(0).getDescripcion());
-            //txtMenu.setText(index.getRestaurantes().get(0).getMenu());
+            txtNombre.setText(index.getFicha().get(0).getNombreRestaurante());
+            txtCategoria.setText(index.getFicha().get(0).getCategoria());
+            txtDescripcion.setText(index.getFicha().get(0).getDescripcion());
         }
     }
 
