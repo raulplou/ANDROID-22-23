@@ -71,6 +71,7 @@ public class ListaRestaurantes extends AppCompatActivity implements LstIndexCont
         recyclerRestaurantes.setLayoutManager(new LinearLayoutManager(this));
 
         AdaptadorRestaurantes adapter = new AdaptadorRestaurantes(listaRestaurantes);
+
         recyclerRestaurantes.setAdapter(adapter);
     }
 

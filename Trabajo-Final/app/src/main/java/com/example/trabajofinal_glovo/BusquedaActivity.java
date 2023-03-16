@@ -37,6 +37,10 @@ public class BusquedaActivity extends AppCompatActivity implements LstIndexContr
                 Intent screenChanger = new Intent(getBaseContext(),
                         RestaurantesFiltrados.class
                 );
+                Bundle categoryBundle = new Bundle();
+                categoryBundle.putString("Categoria", filtroCategoria.getText().toString());
+                screenChanger.putExtras(categoryBundle);
+
                 startActivity(screenChanger);
             }
         });

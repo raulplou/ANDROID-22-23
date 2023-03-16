@@ -20,6 +20,7 @@ public class TopRestaurantes extends AppCompatActivity implements LstIndexContra
     ArrayList<Restaurantes> listaRestaurantes;
     RecyclerView recyclerRestaurantes;
     LstIndexPresenter lstIndexPresenter;
+    String filtro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +49,13 @@ public class TopRestaurantes extends AppCompatActivity implements LstIndexContra
 
     @Override
     public void successLstIndex(ArrayList<Index> lstIndex) {
-        for (int i = 0; i < 10; i++) {//Restaurantes restaurantes: lstIndex.get(0).getRestaurantes()
-            listaRestaurantes.add(lstIndex.get(0).getRestaurantes().get(i));
-            //listaRestaurantes.add(new Restaurantes("La Mafia","Comida italiana"));
-            //listaRestaurantes.add(new Restaurantes("El Churrasco","Comida aragonesa"));
-            //listaRestaurantes.add(new Restaurantes("Ché","Comida argentina"));
+        Bundle filtroTopBundle = this.getIntent().getExtras();
+        if(filtroTopBundle != null){
+            filtro = filtroTopBundle.getString("Top");
+            listaRestaurantes = lstIndex.get(0).getTopDiez();
+            Toast.makeText(this, "TOP DIEZ", Toast.LENGTH_SHORT).show();
         }
+
         recyclerRestaurantes.setLayoutManager(new LinearLayoutManager(this));
 
         AdaptadorRestaurantes adapter = new AdaptadorRestaurantes(listaRestaurantes);

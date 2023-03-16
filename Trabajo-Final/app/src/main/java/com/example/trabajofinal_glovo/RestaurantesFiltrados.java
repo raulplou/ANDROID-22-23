@@ -20,6 +20,7 @@ public class RestaurantesFiltrados extends AppCompatActivity implements LstIndex
     ArrayList<Restaurantes> listaFiltrados;
     RecyclerView recyclerFiltrados;
     LstIndexPresenter lstIndexPresenter;
+    String filtro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +48,18 @@ public class RestaurantesFiltrados extends AppCompatActivity implements LstIndex
 
     @Override
     public void successLstIndex(ArrayList<Index> lstIndex) {
-        for (Restaurantes restaurantes: lstIndex.get(0).getRestaurantes()) {
-            listaFiltrados.add(restaurantes);
+        Bundle filtroCategoriaBundle = this.getIntent().getExtras();
+        if(filtroCategoriaBundle != null){
+            filtro = filtroCategoriaBundle.getString("Categoria");
+
+            if (filtro.equals("Comida italiana")){
+                listaFiltrados = lstIndex.get(0).getByCategoria();
+
+                Toast.makeText(this, "Comida italiana", Toast.LENGTH_SHORT).show();
+            }
         }
+
+
 
         recyclerFiltrados.setLayoutManager(new LinearLayoutManager(this));
 

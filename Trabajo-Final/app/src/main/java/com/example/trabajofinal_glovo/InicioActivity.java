@@ -23,6 +23,10 @@ public class InicioActivity extends AppCompatActivity {
                 Intent screenChanger = new Intent(getBaseContext(),
                         TopRestaurantes.class
                 );
+                Bundle topBundle = new Bundle();
+                topBundle.putString("Top", ventas.getText().toString());
+                screenChanger.putExtras(topBundle);
+
                 startActivity(screenChanger);
             }
         });

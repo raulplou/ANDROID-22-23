@@ -18,6 +18,13 @@ public class Index {
     @SerializedName("compras")
     private ArrayList<Compras> compras;
 
+    @SerializedName("byCategoria")
+    private ArrayList<Restaurantes> byCategoria;
+
+    @SerializedName("TopDiez")
+    private ArrayList<Restaurantes> topDiez;
+
+
     public ArrayList<Restaurantes> getRestaurantes() {
         return restaurantes;
     }
@@ -50,6 +57,22 @@ public class Index {
         this.compras = compras;
     }
 
+    public ArrayList<Restaurantes> getByCategoria() {
+        return byCategoria;
+    }
+
+    public void setByCategoria(ArrayList<Restaurantes> byCategoria) {
+        this.byCategoria = byCategoria;
+    }
+
+    public ArrayList<Restaurantes> getTopDiez() {
+        return topDiez;
+    }
+
+    public void setTopDiez(ArrayList<Restaurantes> topDiez) {
+        this.topDiez = topDiez;
+    }
+
     @Override
     public String toString() {
         return "Index{" +
@@ -57,6 +80,8 @@ public class Index {
                 ", usuarios=" + usuarios +
                 ", productos=" + productos +
                 ", compras=" + compras +
+                ", byCategoria=" + byCategoria +
+                ", topDiez=" + topDiez +
                 '}';
     }
 }
