@@ -1,12 +1,11 @@
 package com.example.trabajofinal_glovo;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.trabajofinal_glovo.entities.Index;
 import com.example.trabajofinal_glovo.entities.Restaurantes;
@@ -15,7 +14,7 @@ import com.example.trabajofinal_glovo.lst_index.presenter.LstIndexPresenter;
 
 import java.util.ArrayList;
 
-public class TopRestaurantes extends AppCompatActivity implements LstIndexContract.View{
+public class TopPuntuacion extends AppCompatActivity implements LstIndexContract.View{
 
     ArrayList<Restaurantes> listaRestaurantes;
     RecyclerView recyclerRestaurantes;
@@ -25,7 +24,7 @@ public class TopRestaurantes extends AppCompatActivity implements LstIndexContra
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.top_restaurantes);
+        setContentView(R.layout.top_puntuacion);
 
         initComponents();
         initPresenter();
@@ -35,7 +34,7 @@ public class TopRestaurantes extends AppCompatActivity implements LstIndexContra
 
     public void initComponents(){
         listaRestaurantes = new ArrayList<>();
-        recyclerRestaurantes = (RecyclerView) findViewById(R.id.recyclerTop);
+        recyclerRestaurantes = (RecyclerView) findViewById(R.id.recyclerTopPuntuacion);
     }
 
     public void initPresenter(){

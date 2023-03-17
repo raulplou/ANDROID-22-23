@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class InicioActivity extends AppCompatActivity {
 
-    Button ventas,elegir;
+    Button ventas,elegir,puntuacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,16 @@ public class InicioActivity extends AppCompatActivity {
             }
         });
 
+        puntuacion = (Button) findViewById(R.id.btnPuntuacion);
+
+        puntuacion.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent screenChanger = new Intent(getBaseContext(),
+                        TopPuntuacion.class
+                );
+                startActivity(screenChanger);
+            }
+        });
 
     }
 }
